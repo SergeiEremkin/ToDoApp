@@ -1,5 +1,3 @@
-import logic
-import classNote
+import userController
 
-note1 = classNote.Note("Сходить в магазин", "Купить хлеб и батон")
-logic.add(note1)
+userController.start()

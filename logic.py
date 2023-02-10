@@ -1,5 +1,6 @@
 import db
 import classNote
+from colorama import Fore, Style
 
 def add(input):
     listOfNotes = db.readFromFile()
@@ -8,7 +9,8 @@ def add(input):
                 classNote.Note.setId(input)
     listOfNotes.append(input)
     db.writeTofileList(listOfNotes, 'a')
-    print("Заметка добавлена")    
+    print(Fore.GREEN + "Заметка добавлена")
+    print(Style.RESET_ALL)    
     
        
 
@@ -18,7 +20,8 @@ def show():
         for note in listOfNotes:
             print(classNote.Note.forShow(note))
     except Exception:
-        print ('\nНет ни одной задачи\n')
+        print (Fore.RED + '\nНет ни одной задачи\n')
+        print(Style.RESET_ALL)  
 
 def showByDate(input):
     isEmpty = True
@@ -28,7 +31,8 @@ def showByDate(input):
             print(classNote.Note.forShow(note))
             isEmpty =False
     if isEmpty == True:
-        print("Задач не найдено")
+        print(Fore.RED + "Задач не найдено")
+        print(Style.RESET_ALL)  
 
 
 def showById(input):
@@ -39,7 +43,8 @@ def showById(input):
             print(classNote.Note.forShow(note))
             isEmpty = False
     if isEmpty == True:
-        print("Задач не найдено")
+        print(Fore.RED + "Задач не найдено")
+        print(Style.RESET_ALL)  
 
 
 def delete(input):
@@ -49,10 +54,12 @@ def delete(input):
         if input == classNote.Note.getId(note) :
             isDeleted = True
             listOfNotes.remove(note)
-            print("Заметка удалена")
+            print(Fore.GREEN + "Заметка удалена")
+            print(Style.RESET_ALL)  
     db.writeTofileList(listOfNotes, 'a')
     if isDeleted == False :
-        print('Такой заметки нет. Возможно вы ввели неверный id')
+        print(Fore.RED + 'Такой заметки нет. Возможно вы ввели неверный id')
+        print(Style.RESET_ALL)  
 
 
 def edit(input, newTitle, newBody):
@@ -62,6 +69,7 @@ def edit(input, newTitle, newBody):
             classNote.Note.setTitle(note,newTitle)
             classNote.Note.setBody(note, newBody)
             classNote.Note.setDate(note)
-            print('Заметка изменена')
+            print(Fore.GREEN + 'Заметка изменена')
+            print(Style.RESET_ALL)  
     db.writeTofileList(listOfNotes, 'a')
      

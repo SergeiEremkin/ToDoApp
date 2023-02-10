@@ -39,7 +39,7 @@ def start():
             print('\n')
             ui.continueWork()
         if userInput == '6':
-            logic.show()
+            logic.showAllById()
             print("\n")
             logic.showById(input("Введите id заметки: "))
             ui.continueWork()

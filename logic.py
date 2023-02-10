@@ -12,7 +12,14 @@ def add(input):
     print(Fore.GREEN + "Заметка добавлена")
     print(Style.RESET_ALL)    
     
-       
+def showAllById():
+    try:
+        listOfNotes = db.readFromFile()
+        for note in listOfNotes:
+            print('id: ' + classNote.Note.getId(note))
+    except Exception:
+        print (Fore.RED + '\nНет ни одной задачи\n')
+        print(Style.RESET_ALL)  
 
 def show():
     try:

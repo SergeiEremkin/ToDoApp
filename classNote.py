@@ -32,7 +32,7 @@ class Note:
         return note.id +','+ note.title + ',' + note.body + ',' + note.date
         
     def forShow(note):
-         return 'id' +': '+ note.id +'\n'+ 'title'+': '+ note.title + '\n' + 'body'+': '+ note.body + '\n'+ 'date'+': '+ note.date +"\n"
+         return 'id' +': '+ note.id +'\n'+ 'Заголовок'+': '+ note.title + '\n' + 'Тело заметки'+': '+ note.body + '\n'+ 'Дата публикации'+': '+ note.date +"\n"
 
 
 

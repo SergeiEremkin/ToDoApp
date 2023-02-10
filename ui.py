@@ -1,6 +1,6 @@
 import keyboard
 import classNote
-import checks
+from colorama import Fore, Style 
 
 def createNote():
     note = editNote()   
@@ -14,16 +14,17 @@ def editNote():
         print('<Заголовок должен быть больше 5 символов>\n')
         title = input('Введите ЗАГОЛОВОК заметки: ')
     while len(body)<=5:
-        print('<Заметка должен быть больше 5 символо>\n')
+        print('<Заметка должен быть больше 5 символов>\n')
         body = input('\rВведите ОПИСАНИЕ заметки: ')
     return (title, body)
 
 
 def menu():
     print('\n' * 50)
-    print('Добро пожаловать в программу "Заметки"\n')
-    print("\n1 - для вывода всех заметок\n2 - для добавления заметки\n3 - для удаления заметки\n4 - для редактирования заметки\n5 - для выборки по дате\n6 - показать элемент по id\n7 - для выхода\n")
-
+    print(Fore.CYAN + 'Добро пожаловать в программу "Заметки"')
+    print(Style.RESET_ALL) 
+    print(Fore.MAGENTA + "\n1 - для вывода всех заметок\n2 - для добавления заметки\n3 - для удаления заметки\n4 - для редактирования заметки\n5 - для выборки по дате\n6 - показать элемент по id\n7 - для выхода\n")
+    print(Style.RESET_ALL)  
 
 def continueWork():
     print('Нажмите пробел для продолжения...')

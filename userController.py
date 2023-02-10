@@ -44,5 +44,6 @@ def start():
             logic.showById(input("Введите id заметки: "))
             ui.continueWork()
         if userInput == '7':
+            print("Спасибо, что выбрали наше приложение. До новых встреч!")
             break
         
